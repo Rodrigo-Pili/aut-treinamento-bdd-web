@@ -1,6 +1,5 @@
 package curso.treinamento.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,4 +20,29 @@ public class LoginPage {
 
 	@FindBy(name = "login")
 	WebElement botaoSign;
+
+	@FindBy(linkText = "SIGN-OFF")
+	WebElement linkSignOff;
+
+	@FindBy(linkText = "REGISTER")
+	WebElement linkRegister;
+
+	// toda page deve conter um assert
+	public boolean checkPage() {
+		return botaoSign.isDisplayed();
+	}
+
+	public void realizaLogin(String user, String pass) {
+		campoUsuario.sendKeys(user);
+		campoPassword.sendKeys(pass);
+		botaoSign.click();
+	}
+
+	public boolean checkSignOff() {
+		return linkSignOff.isDisplayed();
+	}
+
+	public void clickRegister() {
+		linkRegister.click();
+	}
 }

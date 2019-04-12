@@ -27,7 +27,6 @@ public class LoginPage {
 	@FindBy(linkText = "REGISTER")
 	WebElement linkRegister;
 
-	// toda page deve conter um assert
 	public boolean checkPage() {
 		return botaoSign.isDisplayed();
 	}

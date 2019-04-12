@@ -12,7 +12,7 @@ public class RegistroPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(name = "FirstName")
+	@FindBy(name = "firstName")
 	WebElement campoFirstName;
 
 	@FindBy(name = "lastName")
@@ -27,7 +27,7 @@ public class RegistroPage {
 	@FindBy(name = "address1")
 	WebElement campoAddress;
 
-	@FindBy(name = "Address2")
+	@FindBy(name = "address2")
 	WebElement campoAddressComplement;
 
 	@FindBy(name = "city")
@@ -54,6 +54,12 @@ public class RegistroPage {
 	@FindBy(xpath = "//img[@src='/images/masts/mast_register.gif']")
 	WebElement titlePage;
 
+	@FindBy(name = "register")
+	WebElement botaoSubmit;
+
+	@FindBy(xpath = "//img[@src='/images/masts/mast_register.gif']//following::font[1]")
+	WebElement registroFeitoComSucesso;
+
 	public boolean checkPage() {
 		return titlePage.isDisplayed();
 	}
@@ -79,5 +85,13 @@ public class RegistroPage {
 		campoUserName.sendKeys(userName);
 		campoPassword.sendKeys(password);
 		campoConfirmPassword.sendKeys(confirmPassword);
+	}
+
+	public void clicaBotaoSubmit() {
+		botaoSubmit.click();
+	}
+
+	public boolean checkRegistroFeito() {
+		return registroFeitoComSucesso.isDisplayed();
 	}
 }

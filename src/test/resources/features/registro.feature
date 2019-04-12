@@ -1,7 +1,7 @@
 #language: pt
 Funcionalidade: Registro
 
-  @Sprint1
+  @Registro
   Cenário: Realizar Registro
     Dado que eu esteja na tela de Registro
     Quando faço o preenchimento das informações da tela de Register
